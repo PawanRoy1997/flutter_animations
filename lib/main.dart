@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/screens/explicit_animation.dart';
+import 'package:flutter_animations/screens/implicit_animation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
       routes: {
         MyHomePage.route: (context) =>
             const MyHomePage(title: 'Flutter Demo Home Page'),
-        ExplicitAnimationScreen.route: (context) => ExplicitAnimationScreen()
+        ImplicitAnimationScreen.route: (context) =>
+            const ImplicitAnimationScreen()
       },
       initialRoute: MyHomePage.route,
     );
@@ -47,10 +48,13 @@ class MyHomePage extends StatelessWidget {
               elevation: 10,
               color: Theme.of(context).colorScheme.inversePrimary,
               padding: const EdgeInsets.all(20),
-              shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(10))),
-              child: const Text("Explicit Animation", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold)),
+              shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: const Text("Explicit Animation",
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
               onPressed: () {
-                Navigator.of(context).pushNamed(ExplicitAnimationScreen.route);
+                Navigator.of(context).pushNamed(ImplicitAnimationScreen.route);
               },
             )
           ],
